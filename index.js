@@ -1,27 +1,23 @@
-// // Add your functions here
-//
-// function mapFn (array, funct) {
-//     let arr = [];
-//     for (let i = 0; i < array.length; i++){
-//         arr.push(funct(array[i]));
-//     }
-//     return arr;
-// }
+// Add your functions here
 
+function map(src, cb) {
+  let r = []
 
-// function reduceFn (array, funct, start) {
-//     let tmp;
-//     if(start) {
-//         tmp = start;
-//         for (let i = 0; i < array.length; i++) {
-//             tmp = funcy(array[i], tmp);
-//         }
-//     }
-//     else {
-//         tmp = array[0];
-//         for (let i = 1; i < array.length; i++) {
-//             tmp = funcy(array[i], tmp);
-//         }
-//     }
-//     return tmp;
-// }
+  for (let i = 0; i < src.length; i++) {
+    let theElement = src[i]
+    r.push(cb(theElement))
+  }
+
+  return r;
+}
+
+function reduce(src, cb, starting){
+  let r = (!!starting) ? starting : src[0]
+  let i = (!!starting) ? 0 : 1
+
+  for (; i < src.length; i++) {
+    r = cb(src[i], r)
+  }
+
+  return r;
+}
