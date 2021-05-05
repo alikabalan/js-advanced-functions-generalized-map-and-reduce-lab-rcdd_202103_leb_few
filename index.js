@@ -2,12 +2,12 @@
 
 // function map(arr, funct) {
 //   let myArr = []
-// 
+//
 //   for (let i = 0; i < arr.length; i++) {
 //     let e = arr[i]
 //     myArr.push(funct(e))
 //   }
-// 
+//
 //   return myArr;
 // }
 
